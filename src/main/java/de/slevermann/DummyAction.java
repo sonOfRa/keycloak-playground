@@ -24,7 +24,6 @@ public class DummyAction implements RequiredActionProvider {
                 .getDecodedFormParameters();
         if (params.containsKey("doFailure")) {
             requiredActionContext.failure();
-            requiredActionContext.getAuthenticationSession().getParentSession().restartSession(requiredActionContext.getRealm());
             return;
         }
         if (params.containsKey("doSuccess")) {
